@@ -34,5 +34,4 @@ module.exports = function apiRoutes(app) {
         }); //fs.readFile
         res.json(friends[match]);
     }); //post /api/friends
-
 } //module.exports
