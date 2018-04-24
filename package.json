@@ -1,5 +1,5 @@
 {
-  "name": "FriendFinder",
+  "name": "friendfinder",
   "version": "1.0.0",
   "description": "FriendFinder",
   "main": "index.js",
@@ -19,6 +19,8 @@
   "homepage": "https://github.com/pcheno/FriendFinder#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3"
-  }
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
 }
