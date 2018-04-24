@@ -11,4 +11,8 @@ app.use(bp.json());
 app.use(ex.static(p.join(__dirname, "/app/public")));
 
 require("./app/routing/apiRoutes.js")(app);
-require("")
+require("./app/routing/htmlRoutes.js")(app);
+
+app.listen(PORT, function() {
+    console.log("FriendFinder listening on PORT " + PORT);
+});
