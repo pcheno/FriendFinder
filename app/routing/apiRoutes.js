@@ -11,11 +11,6 @@ module.exports = function apiRoutes(app) {
         var totDiff;
         var diffArry = [];
         var newFriend = req.body;
-        console.log("new friend\n");
-        console.log(newFriend);
-        console.log("all friends\n");
-        console.log(friends);
-
 
         for (var i = 0; i < friends.length; i++) {
             totDiff = 0;
@@ -24,9 +19,9 @@ module.exports = function apiRoutes(app) {
             } //for j
             diffArry.push(totDiff);
         } //for i
-        console.log(diffArry);
+
         var match = diffArry.indexOf(Math.min(...diffArry));
-        console.log(match);
+
         friends.push(newFriend);
 
         fs.readFile(path.join(__dirname, "../data/friends.json"), "utf8", function (err, data) {
