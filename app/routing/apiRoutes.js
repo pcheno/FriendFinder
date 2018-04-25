@@ -1,7 +1,7 @@
 module.exports = function apiRoutes(app) {
     const fs = require("fs");
     const path = require("path");
-    var friends = require("/../data/friends.js");
+    var friends = require("./../data/friends.js");
 
     app.get("/api/friends", function (req, res) {
         return res.json(friends);
@@ -11,17 +11,22 @@ module.exports = function apiRoutes(app) {
         var totDiff;
         var diffArry = [];
         var newFriend = req.body;
+        console.log("new friend\n");
+        console.log(newFriend);
+        console.log("all friends\n");
+        console.log(friends);
+
 
         for (var i = 0; i < friends.length; i++) {
             totDiff = 0;
-            for (var j = 0; j < newFriend.length; j++) {
+            for (var j = 0; j < newFriend.scores.length; j++) {
                 totDiff += Math.abs(friends[i].scores[j] - newFriend.scores[j]);
             } //for j
             diffArry.push(totDiff);
         } //for i
-
-        var match = diffArry.indexOf(Math.min())
-
+        console.log(diffArry);
+        var match = diffArry.indexOf(Math.min(...diffArry));
+        console.log(match);
         friends.push(newFriend);
 
         fs.readFile(path.join(__dirname, "../data/friends.json"), "utf8", function (err, data) {
