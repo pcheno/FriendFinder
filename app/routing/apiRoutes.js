@@ -23,6 +23,8 @@ module.exports = function apiRoutes(app) {
         var match = diffArry.indexOf(Math.min(...diffArry));
 
         friends.push(newFriend);
+        
+        console.log(newFriend);
 
         fs.readFile(path.join(__dirname, "../data/friends.json"), "utf8", function (err, data) {
             if (err) throw err;
